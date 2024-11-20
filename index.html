@@ -3,63 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Control de la Biblioteca</title>
+    <title>Panel de Administración de Biblioteca</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="book.png" type="image/png">
 </head>
 <body>
     <div class="container">
-        <aside class="sidebar">
-            <header class="sidebar-header">
-                <h2>Mi Biblioteca</h2>
-            </header>
-            <nav class="sidebar-nav">
-                <ul>
-                    <li><a href="#" class="active">Libros</a></li>
-                    <li><a href="#">Usuarios</a></li>
-                    <li><a href="#">Configuración</a></li>
-                </ul>
-            </nav>
-            <footer class="sidebar-footer">
-                <button id="logout">Cerrar Sesión</button>
-            </footer>
-        </aside>
-        <main class="main-content">
-            <header class="main-header">
-                <h1>Panel de Control de la Biblioteca</h1>
-            </header>
-            <section class="book-form">
-                <h2>Agregar Nuevo Libro</h2>
-                <form id="addBookForm">
-                    <input type="text" id="title" placeholder="Título" required>
-                    <input type="text" id="author" placeholder="Autor" required>
-                    <input type="number" id="year" placeholder="Año" required>
-                    <input type="date" id="expirationDate" placeholder="Fecha de Expiración" required>
-                    <input type="text" id="reservedBy" placeholder="Reservado por">
-                    <button type="submit">Agregar Libro</button>
-                </form>
-            </section>
-            <section class="book-list">
-                <h2>Libros en la Biblioteca</h2>
-                <input type="text" id="searchBook" placeholder="Buscar libros...">
-                <table id="bookTable">
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Autor</th>
-                            <th>Año</th>
-                            <th>Fecha de Expiración</th>
-                            <th>Reservado por</th>
-                            <th>Disponible</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <!-- Los libros se agregarán aquí dinámicamente -->
-                    </tbody>
-                </table>
-            </section>
-        </main>
+        <h1>Panel de Administración de Biblioteca</h1>
+        <form id="book-form">
+            <input type="text" id="title" placeholder="Título" required>
+            <input type="text" id="writer" placeholder="Autor" required>
+            <input type="number" id="date" placeholder="Año" required>
+            <input type="text" id="genre" placeholder="Género" required>
+            <input type="date" id="expirationTime" placeholder="Fecha de Expiración" required>
+            <button type="submit">Agregar Libro</button>
+        </form>
+        <div id="books-list">
+            <h2>Lista de Libros</h2>
+            <ul id="books"></ul>
+        </div>
     </div>
-    <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>
