@@ -2,7 +2,8 @@ import mongoose from "mongoose";
 
 export const connectDB = async ():Promise<void> => {
   try{
-    await mongoose.connect(`${process.env.DB_URL}`)
+    const dbUrl = process.env.DB_URL;
+    await mongoose.connect(`${dbUrl}`)
     console.log("Base de datos Online")
   } catch (error) {
     console.log("Error al iniciar la base de datos",error)

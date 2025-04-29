@@ -1,0 +1,22 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "app.ts",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+
+        {
+            "src": "/(.*)",
+            "headers": {
+                "Access-Control-Allow-Origin": "https://librarypanel.vercel.app/",
+                "Access-Control-Allow-Methods": "GET, POST, PATCH, DELETE, OPTIONS",
+                "Access-Control-Allow-Headers": "Content-Type, Authorization",
+                "Access-Control-Allow-Credentials": "true"
+            },
+            "dest": "app.ts"
+        }
+    ]
+}
