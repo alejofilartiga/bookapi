@@ -5,7 +5,7 @@ import booksRoute from "./routes/books"
 import cors from "cors"
 
 const corsConfig = {
-  origin: "https://librarypanel.vercel.app/",
+  origin: "https://librarypanel.vercel.app",
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   preflightContinue: false,
