@@ -48,7 +48,7 @@
                 "description":"",
                 "operationId":"createBook",
                 "requestBody":{
-                    "$ref":"#/components/schema/Book"
+                    "$ref":"#/components/requestBodies/Book"
                 },
                 "responses":{
                     "200":{
