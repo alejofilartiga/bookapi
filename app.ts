@@ -25,8 +25,8 @@ connectDB()
 
 app.use(cors(corsConfig))
 app.use(express.json())
-app.use("/docs", express.static(path.join(__dirname,"public")))
-app.use("/docs", SwaggerUI.serve, SwaggerUI.setup(swaggerDocument))
+app.use("/", express.static(path.join(__dirname,"public")))
+app.use("/", SwaggerUI.serve, SwaggerUI.setup(swaggerDocument))
 
 app.use("/bookapi",booksRoute)
 app.options(/(.*)/, cors(corsConfig))
