@@ -55,7 +55,7 @@
                         "description":"Book created correctly"
                     },
                     "404":{
-                        "description":""
+                        "description":"Error in post request"
                     }
                 }
             }
@@ -111,7 +111,8 @@
                         }
                     }
                 },
-                "description":"The Book needs to be added"
+                "description":"The Book needs to be added",
+                "required":true
             }
         }
     }
