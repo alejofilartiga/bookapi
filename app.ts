@@ -2,7 +2,10 @@ import express from "express";
 import { connectDB } from "./db/config";
 import dotenv from "dotenv"
 import booksRoute from "./routes/books"
+import SwaggerUI from 'swagger-ui-express'
+const swaggerDocument = require("./public/swagger.json")
 import cors from "cors"
+import path from "path"
 
 const corsConfig = {
   origin: "https://librarypanel.vercel.app",
@@ -22,6 +25,9 @@ connectDB()
 
 app.use(cors(corsConfig))
 app.use(express.json())
+app.use("/docs", express.static(path.join(__dirname,"public")))
+app.use("/docs", SwaggerUI.serve, SwaggerUI.setup(swaggerDocument))
+
 app.use("/bookapi",booksRoute)
 app.options(/(.*)/, cors(corsConfig))
 
