@@ -11,7 +11,7 @@
     },
     "servers": [
         {
-            "url": "https://book-api-alejo.vercel.app"
+            "url": "https://bookapi-alejo.vercel.app"
         }
     ],
     "tags":[
