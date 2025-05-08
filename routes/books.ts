@@ -3,13 +3,13 @@ import {createBook, getBooks, getBook, updateBook, deleteBook} from "../controll
 const router = Router()
 
 // [C]reate
-router.post("/bookapi",createBook)         
+router.post("/",createBook)         
 // [R]ead
-router.get("/bookapi",getBooks)
-router.get("/bookapi/:id",getBook)
+router.get("/",getBooks)
+router.get("/:id",getBook)
 // [U]pdate
-router.patch("/bookapi/:id",updateBook)
+router.patch("/:id",updateBook)
 // [D]elete
-router.delete("/bookapi/:id",deleteBook)
+router.delete("/:id",deleteBook)
 
 export default router
