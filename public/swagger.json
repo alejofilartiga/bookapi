@@ -1,3 +1,118 @@
 {
-    
+    "openapi": "3.0.0",
+    "info": {
+        "title": "book API",
+        "version": "1.0.0",
+        "description": "API for managing books and authors. You can find\nout more about my projects at\n[My Github](https://github.com/alejofilartiga)",
+        "termsOfService": "http://swagger.io/terms/",
+        "contact": {
+            "email": "alejofilartiga@gmail.com"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://book-api-alejo.vercel.app"
+        }
+    ],
+    "tags":[
+        {
+            "name": "book",
+            "description": "Book Management API",
+            "externalDocs": {
+                "description": "Use Library-Panel for manage this API",
+                "url": "https://librarypanel.vercel.app"
+            }
+        }
+    ],
+    "paths":{
+        "/bookapi":{
+            "get":{
+                "tags":["book"],
+                "summary": "Get all books",
+                "description": "Get all books from the database",
+                "operationId":"getBooks",
+                "responses": {
+                    "200": {
+                        "description": "A JSON array of books",
+                        "content":{
+                            "application/json":{
+                                "$ref":"#/components/schema/Book"
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "tags":["book"],
+                "summary":"Post a new Book",
+                "description":"",
+                "operationId":"createBook",
+                "requestBody":{
+                    "$ref":"#/components/schema/Book"
+                },
+                "responses":{
+                    "200":{
+                        "description":"Book created correctly"
+                    },
+                    "404":{
+                        "description":""
+                    }
+                }
+            }
+        }
+    },
+    "components":{
+        "schema":{
+            "Book":{
+                "type":"object",
+                "required":["title","writer","genre"],
+                "properties":{
+                    "title":{
+                        "type":"string",
+                        "description":"The title book"
+                    },
+                    "writer":{
+                        "type":"string",
+                        "description":"The writer of the book"
+                    },
+                    "genre":{
+                        "type":"String",
+                        "description":"The genre of the book"
+                    },
+                    "date":{
+                        "type":"number",
+                        "description": "Book publication date"
+                    },
+                    "expirationTime":{
+                        "type":"string",
+                        "description":"Expiration of the rented book"
+                    },
+                    "available":{
+                        "type":"boolean",
+                        "description":"Weather the book still available or not"
+                    }
+                },
+                "example":{
+                    "title":"Don Quijote",
+                    "writer":"Cervantes",
+                    "genre":"Fantasy",
+                    "date":"1910",
+                    "expirationTime":"2025-05-08",
+                    "available":"true"
+                }
+            }
+        },
+        "requestBodies":{
+            "Book":{
+                "content":{
+                    "application/json":{
+                        "schema":{
+                            "$ref":"#/components/schema/Book"
+                        }
+                    }
+                },
+                "description":"The Book needs to be added"
+            }
+        }
+    }
 }

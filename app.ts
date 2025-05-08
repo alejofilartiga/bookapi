@@ -8,7 +8,7 @@ import cors from "cors"
 import path from "path"
 
 const corsConfig = {
-  origin: "https://librarypanel.vercel.app",
+  origin: "*",
   methods: ["GET", "POST", "PATCH", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   preflightContinue: false,
